@@ -12,8 +12,6 @@ spec:
   secretRef:
     name: flux-system
   url: ssh://git@github.com/physarum-dev/example-dags-deployment
-  ignore: |
-    dags/**/airflow-config.yaml
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
