@@ -28,14 +28,17 @@ spec:
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
         value: "0.1"
     executor: "KubernetesExecutor"
+    createUserJob:
+      useHelmHooks: false
+      applyCustomEnv: false
+    migrateDatabaseJob:
+      useHelmHooks: false
+      applyCustomEnv: false
     images:
       airflow:
         repository: "docker.io/nageshnode/airflow"
         tag: "hive"
-    createUserJob:
-      useHelmHooks: false
-    migrateDatabaseJob:
-      useHelmHooks: false
+
     dags:
       persistence:
         enabled: False

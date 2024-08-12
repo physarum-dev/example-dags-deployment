@@ -1,0 +1,71 @@
+airflow_config:
+  owner: testing
+  connection_id: conn_1
+  retries: 1
+  retry_delay: 300
+  max_retries: 1
+  timeout: 600
+  depends_on_past: false
+  catchup: false
+  is_template: false
+  pool: default_pool
+  priority_weight: 10
+  weight_rule: downstream
+  email: test@example.com
+  hive_cli_conn_id: hive_conn
+  run_as_user: false
+  metastore_conn_id: metastore_default
+  presto_conn_id: presto_default
+  email_on_failure: true
+  email_on_retry: false
+  task_concurrency: 1
+  dagrun_timeout: 86400.0
+  concurrency: 1
+dag_config:
+  dag_id: airflow_example
+  description: This is an example DAG
+  schedule_interval: '@daily'
+  start_date: '2024-07-08 00:00:00'
+  catchup: false
+  tags:
+  - example
+  - test
+  concurrency: null
+operators_config:
+  chronon_operator:
+    env:
+      VERSION: null
+      SPARK_SUBMIT_PATH: /opt/spark/bin/spark-submit
+      JOB_MODE: local[*]
+      HADOOP_DIR: null
+      CHRONON_ONLINE_CLASS: null
+      CHRONON_ONLINE_ARGS: null
+      PARTITION_COLUMN: ds
+      PARTITION_FORMAT: yyyy-MM-dd
+    resources:
+      production:
+        streaming:
+          EXECUTOR_CORES: 2
+          DRIVER_MEMORY: 4G
+          EXECUTOR_MEMORY: 4G
+          PARALLELISM: 1
+          MAX_EXECUTORS: 100
+        batch:
+          EXECUTOR_CORES: 1
+          DRIVER_MEMORY: 15G
+          EXECUTOR_MEMORY: 8G
+          PARALLELISM: 1
+          MAX_EXECUTORS: 1000
+      dev:
+        streaming:
+          EXECUTOR_CORES: 2
+          DRIVER_MEMORY: 4G
+          EXECUTOR_MEMORY: 4G
+          PARALLELISM: 1
+          MAX_EXECUTORS: 100
+        batch:
+          EXECUTOR_CORES: 1
+          DRIVER_MEMORY: 15G
+          EXECUTOR_MEMORY: 8G
+          PARALLELISM: 1
+          MAX_EXECUTORS: 1000
