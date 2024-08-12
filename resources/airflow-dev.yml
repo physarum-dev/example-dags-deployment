@@ -28,9 +28,10 @@ spec:
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
         value: "0.1"
     executor: "KubernetesExecutor"
-    airflow:
-      extraPipPackages:
-        - "apache-airflow-providers-apache-hive==8.1.2"
+    images:
+      airflow:
+        repository: "nageshnode/airflow"
+        tag: "hive"
     createUserJob:
       useHelmHooks: false
     migrateDatabaseJob:
