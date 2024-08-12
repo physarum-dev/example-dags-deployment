@@ -15,8 +15,8 @@ spec:
         name: apache-airflow
         namespace: flux-system
   values:
-    defaultAirflowTag: "2.5.1"
-    airflowVersion: "2.5.1"
+    defaultAirflowTag: "2.9.3"
+    airflowVersion: "2.9.3"
     fernetKey: "zTxhk7FuGqQVPZVoukLn5bGWOrgHzhQnBnaqAItcZGI="
     env:
       - name: "AIRFLOW__CORE__LOAD_EXAMPLES"
@@ -29,7 +29,7 @@ spec:
         value: "0.1"
     executor: "KubernetesExecutor"
     extraPipPackages: 
-      - "apache-airflow-providers-apache-hive[amazon]"
+      - "apache-airflow-providers-apache-hive==8.1.2"
     createUserJob:
       useHelmHooks: false
     migrateDatabaseJob:
