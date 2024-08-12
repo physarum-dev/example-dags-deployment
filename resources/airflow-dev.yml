@@ -40,7 +40,7 @@ spec:
         repo: "https://github.com/physarum-dev/example-dags-deployment.git"
         branch: "main"
         wait: 60
-        subPath: "dags/Physarum_quickstart"
+        subPath: "dags"
 
 
     
