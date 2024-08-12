@@ -30,7 +30,7 @@ spec:
     executor: "KubernetesExecutor"
     images:
       airflow:
-        repository: "nageshnode/airflow"
+        repository: "docker.io/nageshnode/airflow"
         tag: "hive"
     createUserJob:
       useHelmHooks: false
