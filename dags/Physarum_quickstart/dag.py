@@ -16,7 +16,7 @@ from helpers import should_schedule, task_names, get_extra_args, extract_depende
 
 absolute_path = abspath(os.path.dirname(__file__))
 
-CONFIG_PATH = pjoin(absolute_path, "config.yaml")
+CONFIG_PATH = pjoin(absolute_path, "airflow-config.yaml")
 
 
 class DagConstructor(object):
