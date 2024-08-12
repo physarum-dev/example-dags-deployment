@@ -39,7 +39,6 @@ spec:
         enabled: True
         repo: "https://github.com/physarum-dev/example-dags-deployment.git"
         branch: "main"
-        subpath: "dags"
         wait: 60
 
 
