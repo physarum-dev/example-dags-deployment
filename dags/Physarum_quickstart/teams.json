@@ -1,0 +1,44 @@
+{
+    "default": {
+        "common_env": {
+            "SPARK_SUBMIT_PATH": "/opt/spark/bin/spark-submit",
+            "JOB_MODE": "local[*]",
+            "PARTITION_COLUMN": "ds",
+            "PARTITION_FORMAT": "yyyy-MM-dd"
+        }
+    },
+    "Physarum_quickstart": {
+        "production": {
+            "streaming": {
+                "EXECUTOR_CORES": 2,
+                "DRIVER_MEMORY": "4G",
+                "EXECUTOR_MEMORY": "4G",
+                "PARALLELISM": 1,
+                "MAX_EXECUTORS": 100
+            },
+            "batch": {
+                "EXECUTOR_CORES": 1,
+                "DRIVER_MEMORY": "15G",
+                "EXECUTOR_MEMORY": "8G",
+                "PARALLELISM": 1,
+                "MAX_EXECUTORS": 1000
+            }
+        },
+        "dev": {
+            "streaming": {
+                "EXECUTOR_CORES": 2,
+                "DRIVER_MEMORY": "4G",
+                "EXECUTOR_MEMORY": "4G",
+                "PARALLELISM": 1,
+                "MAX_EXECUTORS": 100
+            },
+            "batch": {
+                "EXECUTOR_CORES": 1,
+                "DRIVER_MEMORY": "15G",
+                "EXECUTOR_MEMORY": "8G",
+                "PARALLELISM": 1,
+                "MAX_EXECUTORS": 1000
+            }
+        }
+    }
+}

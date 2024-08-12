@@ -24,9 +24,9 @@ spec:
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__NAMESPACE"
         value: "dev"
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_REPOSITORY"
-        value: "apache/airflow"
+        value: "nageshnode/airflow-worker"
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
-        value: "slim-2.5.1-python3.8"
+        value: "0.1"
     executor: "KubernetesExecutor"
     createUserJob:
       useHelmHooks: false
@@ -40,7 +40,7 @@ spec:
         repo: "https://github.com/physarum-dev/example-dags-deployment.git"
         branch: "main"
         wait: 60
-        subPath: "dags"
+        subPath: "dags/Physarum_quickstart"
 
 
     
