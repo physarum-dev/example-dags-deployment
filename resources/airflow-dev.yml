@@ -28,6 +28,8 @@ spec:
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
         value: "0.1"
     executor: "KubernetesExecutor"
+    extraPipPackages: 
+      - "apache-airflow-providers-apache-hive[amazon]"
     createUserJob:
       useHelmHooks: false
     migrateDatabaseJob:
