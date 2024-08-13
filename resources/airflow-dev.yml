@@ -40,8 +40,6 @@ spec:
     dags:
       persistence:
         enabled: True
-        existingClaim: "airflow-pvc"
-        
       gitSync:
         enabled: True
         repo: "https://github.com/physarum-dev/example-dags-deployment.git"
