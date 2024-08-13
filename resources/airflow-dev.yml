@@ -30,6 +30,10 @@ spec:
     executor: "KubernetesExecutor"
     airflow:
       extraPipPackages: ["apache-airflow-providers-apache-hive"]
+    createUserJob:
+      useHelmHooks: false
+    migrateDatabaseJob:
+      useHelmHooks: false
     images:
       airflow:
         repository: "docker.io/nageshnode/airflow"
