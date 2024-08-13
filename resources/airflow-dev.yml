@@ -28,8 +28,7 @@ spec:
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
         value: "0.1"
     executor: "KubernetesExecutor"
-    airflow:
-      extraPipPackages: ["apache-airflow-providers-apache-hive"]
+      
     createUserJob:
       useHelmHooks: false
     migrateDatabaseJob:
@@ -38,10 +37,16 @@ spec:
       airflow:
         repository: "docker.io/nageshnode/airflow"
         tag: "hive"
-
+    airflow:
+      extraPipPackages: ["apache-airflow-providers-apache-hive"]
     dags:
       persistence:
-        enabled: False
+          enabled: true
+          existingClaim: airflow-pvc  # Reference the PVC here
+          storageClass: ""            # Leave empty if using existing PVC
+          accessModes:
+            - ReadWriteMany
+          size: 1Gi        
       gitSync:
         enabled: True
         repo: "https://github.com/physarum-dev/example-dags-deployment.git"
