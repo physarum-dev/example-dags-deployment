@@ -5,8 +5,8 @@ metadata:
   namespace: dev
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
-  storageClassName: manual
+  storageClassName: standard
