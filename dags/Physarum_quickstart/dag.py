@@ -98,7 +98,7 @@ class DagConstructor(object):
            "default": {"common_env": {k: v for k, v in conf["env"].items() if v is not None}},
            f"{team}": conf["resources"]
         }
-        json_writer(pjoin(absolute_path, "teams.json"), team_conf)
+        # json_writer(pjoin(absolute_path, "teams.json"), team_conf)
         return team_conf
 
     def _get_chronon_operator_conf(self):

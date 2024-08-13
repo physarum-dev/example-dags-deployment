@@ -27,6 +27,10 @@ spec:
         value: "nageshnode/airflow-worker"
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
         value: "0.1"
+      - name: "AIRFLOW__KUBERNETES__GIT_DAGS_FOLDER_MOUNT_POINT"
+        value: "/opt/airflow/dags"
+      - name: "AIRFLOW__KUBERNETES__DAGS_VOLUME_SUBPATH"
+        value: "repo/"
     executor: "KubernetesExecutor"
     images:
       airflow:
