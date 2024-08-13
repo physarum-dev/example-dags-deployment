@@ -28,9 +28,20 @@ spec:
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
         value: "0.1"
     executor: "KubernetesExecutor"
+    images:
+      airflow:
+        repository: "docker.io/nageshnode/airflow"
+        tag: "hive"
     createUserJob:
       useHelmHooks: false
     migrateDatabaseJob:
       useHelmHooks: false
 
+    dags:  
+      gitSync:
+        enabled: True
+        repo: "https://github.com/physarum-dev/example-dags-deployment.git"
+        branch: "main"
+        wait: 60
+        subPath: "dags"
     
