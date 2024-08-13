@@ -163,7 +163,8 @@ class DagConstructor(object):
         return dags
 
 
-config = list(json.loads(open(CONFIG_PATH, "r")))
+with open(CONFIG_PATH, "r") as file:
+    config = json.load(file)
 
 dag_constructor = DagConstructor(
     airflow_config=config.get("airflow_config"),
