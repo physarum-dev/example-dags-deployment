@@ -36,14 +36,14 @@ spec:
       airflow:
         repository: "docker.io/nageshnode/airflow"
         tag: "hive"
-    airflow:
-      dags:  
-        gitSync:
-          enabled: True
-          repo: "https://github.com/physarum-dev/example-dags-deployment.git"
-          branch: "main"
-          wait: 60
-          subPath: "dags"
+    
+    dags:  
+      gitSync:
+        enabled: True
+        repo: "https://github.com/physarum-dev/example-dags-deployment.git"
+        branch: "main"
+        wait: 60
+        subPath: "dags"
 
 
     
