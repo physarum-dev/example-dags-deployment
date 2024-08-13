@@ -36,8 +36,12 @@ spec:
       airflow:
         repository: "docker.io/nageshnode/airflow"
         tag: "hive"
-    
     dags:
+      persistence:
+          enabled: true
+          existingClaim: airflow-pvc  # Reference the PVC here
+          accessMode: ReadWriteMany
+          size: 1Gi        
       gitSync:
         enabled: True
         repo: "https://github.com/physarum-dev/example-dags-deployment.git"
