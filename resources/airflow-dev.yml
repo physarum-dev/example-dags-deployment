@@ -32,6 +32,10 @@ spec:
       useHelmHooks: false
     migrateDatabaseJob:
       useHelmHooks: false
+    images:
+      airflow:
+        repository: "docker.io/nageshnode/airflow"
+        tag: "hive"
     dags:  
       gitSync:
         enabled: True
