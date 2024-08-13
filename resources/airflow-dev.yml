@@ -43,9 +43,8 @@ spec:
       persistence:
           enabled: true
           existingClaim: airflow-pvc  # Reference the PVC here
-          storageClass: ""            # Leave empty if using existing PVC
-          accessModes:
-            - ReadWriteMany
+          storageClassName: ""            # Leave empty if using existing PVC
+          accessMode: ReadWriteMany
           size: 1Gi        
       gitSync:
         enabled: True
