@@ -32,17 +32,5 @@ spec:
       useHelmHooks: false
     migrateDatabaseJob:
       useHelmHooks: false
-    images:
-      airflow:
-        repository: "docker.io/nageshnode/airflow"
-        tag: "hive"
-    dags:  
-      gitSync:
-        enabled: True
-        repo: "https://github.com/physarum-dev/example-dags-deployment.git"
-        branch: "main"
-        wait: 60
-        subPath: "dags"
-
 
     
