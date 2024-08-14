@@ -28,7 +28,9 @@ spec:
       - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
         value: "0.2"
       - name: "AIRFLOW__KUBERNETES__RUN_AS_USER"
-        value: "50000"
+        value: "0"
+      - name: "AIRFLOW__KUBERNETES__DELETE_WORKER_PODS"
+        value: True
       - name: "AIRFLOW__KUBERNETES__GIT_DAGS_FOLDER_MOUNT_POINT"
         value: "/opt/airflow/dags"
       - name: "AIRFLOW__KUBERNETES__DAGS_VOLUME_SUBPATH"
