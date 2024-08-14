@@ -27,7 +27,7 @@
     "dag_id": "airflow_example",
     "description": "This is an example DAG",
     "schedule_interval": "@daily",
-    "start_date": "2024-14-08 00:00:00",
+    "start_date": "2024-08-14 00:00:00",
     "catchup": false,
     "tags": [
       "example",
