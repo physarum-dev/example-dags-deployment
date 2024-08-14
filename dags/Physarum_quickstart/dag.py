@@ -146,13 +146,14 @@ class DagConstructor(object):
         )
 
     def dag_default_args(self, dag_id):
+        import datetime
         return {
             'dag_id': dag_id,
             'description': self.dag_config["description"],
             'start_date': self.dag_config["start_date"],
             'schedule_interval': self.dag_config["schedule_interval"],
             'tags': self.dag_config["tags"],
-            "end_date":  "2024-08-15 00:00:00",
+            "end_date": datetime.strptime("2024-08-15", "%Y-%m-%d"),
         }
 
     def generate_dag(self):
