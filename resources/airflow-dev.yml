@@ -33,6 +33,7 @@ spec:
         value: "/opt/airflow/dags"
       - name: "AIRFLOW__KUBERNETES__DAGS_VOLUME_SUBPATH"
         value: "repo/"
+    executor: "KubernetesExecutor"
     imags:
       airflow:
         repository: "docker.io/nageshnode/airflow"
