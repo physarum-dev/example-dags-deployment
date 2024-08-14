@@ -152,6 +152,7 @@ class DagConstructor(object):
             'start_date': self.dag_config["start_date"],
             'schedule_interval': self.dag_config["schedule_interval"],
             'tags': self.dag_config["tags"],
+            "end_date":  "2024-15-08 00:00:00",
         }
 
     def generate_dag(self):
