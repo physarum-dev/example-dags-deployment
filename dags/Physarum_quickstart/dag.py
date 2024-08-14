@@ -146,7 +146,7 @@ class DagConstructor(object):
         )
 
     def dag_default_args(self, dag_id):
-        import datetime
+        from datetime import datetime
         return {
             'dag_id': dag_id,
             'description': self.dag_config["description"],
