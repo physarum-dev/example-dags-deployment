@@ -34,7 +34,7 @@ spec:
       - name: "AIRFLOW__KUBERNETES__DAGS_VOLUME_SUBPATH"
         value: "repo/"
     executor: "KubernetesExecutor"
-    imags:
+    images:
       airflow:
         repository: "docker.io/nageshnode/airflow"
         tag: "hive"
